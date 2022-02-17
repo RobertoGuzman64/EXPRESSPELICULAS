@@ -10,6 +10,12 @@ const UsuarioController = require('../controllers/UsuarioController');
 router.get('/', UsuarioController.traeUsuarios);
 //http://localhost:3000/usuarios
 
+router.get('/:id', UsuarioController.traerUsuarioId);
+//http://localhost:3000/:id
+
+router.get('/email/:email', UsuarioController.traerUsuarioEmail);
+//http://localhost:3000//email/:email
+
 //Registro
 router.post('/', UsuarioController.registraUsuario);
 //http://localhost:3000/usuarios
