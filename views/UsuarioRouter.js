@@ -1,7 +1,6 @@
 
 const express = require('express');
 const router = express.Router();
-
 const UsuarioController = require('../controllers/UsuarioController');
 
 //CRUD RESTful
@@ -25,6 +24,7 @@ router.put('/:id', UsuarioController.updateProfile)
 
 //Borramos todos los Usuarios
 router.delete('/', UsuarioController.deleteAll);
+
 //Borramos solo un Usuario
 // router.delete('/:id', UsuarioController.deleteById);
 

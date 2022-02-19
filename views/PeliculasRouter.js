@@ -5,7 +5,7 @@ const router = express.Router();
 const PeliculasController = require('../controllers/PeliculasController');
 
 
-//CRUD RESTful
+//CRUD RESTFUL
 
 //Leer todas las peliculas
 router.get('/', PeliculasController.traePeliculas);

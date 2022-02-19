@@ -1,5 +1,5 @@
-const { default: axios } = require("axios");
 
+const { default: axios } = require("axios");
 const PeliculasController = {};
 
 
@@ -7,11 +7,10 @@ const PeliculasController = {};
 
 PeliculasController.traePeliculas = (req, res) => {
 };
-
 PeliculasController.registraPelicula = (req, res) => {
-
 };
-//EJERCICIO 1
+
+//EJERCICIO 1 Este endpoint tiene que traer los datos de una película si introducimos su número de ID (por ejemplo el número 200)
 PeliculasController.peliculasTitulo = async (req, res) => {
     let nombre = req.query.nombre;
     try{
@@ -22,7 +21,7 @@ PeliculasController.peliculasTitulo = async (req, res) => {
         console.log(error);
     }
 }
-//EJERCICIO 2
+//EJERCICIO 2 Este endpoint tiene que traer las reviews de una película en concreto dado su número de ID
 PeliculasController.peliculasID = async (req, res) => {
     let id = req.query.id;
     try{
@@ -33,7 +32,7 @@ PeliculasController.peliculasID = async (req, res) => {
         console.log(error);
     }
 }
-//EJERCICIO 3
+// EJERCICIO 3 Este endpoint tiene que traer la última película que haya sido registrada en la base de datos
 PeliculasController.peliculasReview = async (req, res) => {
     let id = req.query.id;
     try{
@@ -44,6 +43,8 @@ PeliculasController.peliculasReview = async (req, res) => {
         console.log(error);
     }
 }
+//EJERCICIO 4 Trae las películas con mejor nota por parte de los usuarios en la base de datos
 
+//EJERCICIO 5 Dado un número de id de una película, trae películas similares a esta
 
 module.exports = PeliculasController;

@@ -1,3 +1,4 @@
+
 const config = require('./config/config.json');
 const {Sequelize, DataTypes} = require('sequelize');
 
@@ -11,16 +12,16 @@ const sequelize = new Sequelize(
         dialect: 'mysql',
         operatorAliases: false,
         pool: {
-            max: 5,  //maximum number of connection in pool
-            min: 0,  //minimum number of connection in pool
-            acquire: 30000, //maximum time, in milliseconds, that a connection can be idle before being released
-            idle: 10000 // maximum time, in milliseconds, that pool will try to get connection before throwing error
+            max: 5,  //número máximo de conexiones en el grupo
+            min: 0,  //número minimo de conexiones en el grupo
+            acquire: 30000, //tiempo máximo, en milisegundos, que una conexión puede estar inactiva antes de ser liberada
+            idle: 10000 // tiempo máximo, en milisegundos, que el grupo intentará obtener la conexión antes de arrojar un error
         },
     }
 );
 
 module.exports = sequelize.authenticate()
 .then((db)=>{
-    console.log('MYSQL connected'); 
+    console.log('MYSQL conectado'); 
     return db;
 });

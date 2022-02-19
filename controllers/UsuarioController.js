@@ -10,10 +10,8 @@ UsuarioController.traeUsuarios = (req, res) => {
     //Búsqueda trayendo a todos los usuarios
     Usuario.findAll()
     .then(data => {
-
         res.send(data)
     });
-
 };
 
 UsuarioController.traerUsuarioId = (req, res) => {
@@ -33,21 +31,15 @@ UsuarioController.traerUsuarioEmail = (req, res) => {
 }
 
 UsuarioController.registraUsuario = async (req, res) => {
-
     //Registrando un usuario
-    
     try {
-
         let name = req.body.name;
         let age = req.body.age;
         let surname = req.body.surname;
         let nickname = req.body.nickname;
         let email = req.body.email;
-
         //Comprobación de errores.....
-
         //Guardamos en sequelize el usuario
-
         Usuario.create({
             name: name,
             age: age,
@@ -58,7 +50,6 @@ UsuarioController.registraUsuario = async (req, res) => {
             console.log("este es mi amigo", usuario);
             res.send(`${usuario.name}, bienvenida a este infierno`);
         });
-
     } catch (error) {
         res.send(error);
     }
@@ -66,7 +57,6 @@ UsuarioController.registraUsuario = async (req, res) => {
 };
 
 UsuarioController.deleteAll = async (req, res) => {
-
     try{
         Usuario.destroy({
             where : {},
@@ -81,9 +71,7 @@ UsuarioController.deleteAll = async (req, res) => {
     }
 }
 UsuarioController.deleteByID = async (req, res) => {
-
     let id = req.params.id;
-
     try{
         Usuario.destroy({
             where : {id : id},
@@ -110,12 +98,10 @@ UsuarioController.updateProfile = async (req, res) =>{
         .then
     }
     catch{
-
     }
 }
 
 UsuarioController.logUsuario = (req, res) => {
-
 };
 
 module.exports = UsuarioController;
