@@ -65,6 +65,55 @@ UsuarioController.registraUsuario = async (req, res) => {
     
 };
 
+UsuarioController.deleteAll = async (req, res) => {
+
+    try{
+        Usuario.destroy({
+            where : {},
+            truncate : false
+        })
+        .then(usuariosEliminados =>{
+            res.send(`Se han eliminado${usuariosEliminados}`)
+        })
+    }
+    catch{
+        res.send(error);
+    }
+}
+UsuarioController.deleteByID = async (req, res) => {
+
+    let id = req.params.id;
+
+    try{
+        Usuario.destroy({
+            where : {id : id},
+            truncate : false
+        })
+        .then(usuarioEliminado =>{
+            console.log(usuarioEliminado)
+            res.send(`Se han eliminado el usuario con la id${usuarioEliminado}`)
+        })
+    }
+    catch{
+        res.send(error);
+    }
+}
+
+UsuarioController.updateProfile = async (req, res) =>{
+    let datos = req.body;
+    let id = req.params.id;
+    try{
+        Usuario.update(datos, {
+            where: {id : id}
+            
+        })
+        .then
+    }
+    catch{
+
+    }
+}
+
 UsuarioController.logUsuario = (req, res) => {
 
 };

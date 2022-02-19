@@ -20,6 +20,14 @@ router.get('/email/:email', UsuarioController.traerUsuarioEmail);
 router.post('/', UsuarioController.registraUsuario);
 //http://localhost:3000/usuarios
 
+//Modificar datos de un Usuario
+router.put('/:id', UsuarioController.updateProfile)
+
+//Borramos todos los Usuarios
+router.delete('/', UsuarioController.deleteAll);
+//Borramos solo un Usuario
+// router.delete('/:id', UsuarioController.deleteById);
+
 //Login
 router.post('/login', UsuarioController.logUsuario);
 //https://localhost:3000/usuarios/login
