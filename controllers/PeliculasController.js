@@ -44,7 +44,26 @@ PeliculasController.peliculasReview = async (req, res) => {
     }
 }
 //EJERCICIO 4 Trae las películas con mejor nota por parte de los usuarios en la base de datos
-
+PeliculasController.peliculasTop = async (req, res) => {
+    try{
+        let resultados = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US&page=1`)
+        res.send(resultados.data)
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 //EJERCICIO 5 Dado un número de id de una película, trae películas similares a esta
+PeliculasController.peliculasSimilares = async (req, res) => {
+    try{
+        let resultados = await axios.get(`https://api.themoviedb.org/3/movie/19404/similar?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US&page=1`)
+        res.send(resultados.data)
+    }
+    catch{
+        console.log(error);
+    }
+}
+
+
 
 module.exports = PeliculasController;
